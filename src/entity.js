@@ -145,7 +145,8 @@ jDrupal.Entity.prototype.load = function() {
       _entity.preLoad().then(function() {
 
         var path = jDrupal.restPath() +
-            entityType + '/' + _entity.id() + '?_format=json';
+            entityType + '/' + _entity.id() + '?_format=hal_json';
+          // entityType + '/' + _entity.id() + '?_format=json'; // fixme: only works with hal_json
         var req = new XMLHttpRequest();
         req.dg = {
           service: entityType,
